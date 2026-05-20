@@ -1,0 +1,14 @@
+{
+ "users":[
+  {
+   "key":"BLACKZIN-73421",
+   "name":"Lucas",
+   "days":30
+  },
+  {
+   "key":"BLACKZIN-92117",
+   "name":"Pedro",
+   "days":15
+  }
+ ]
+}
