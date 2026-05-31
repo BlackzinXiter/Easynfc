@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Painel Admin</title>
+
+  <link rel="stylesheet" href="admin.css">
+
+</head>
+<body>
+
+  <header class="topo">
+    <h1>PAINEL ADMIN</h1>
+    <p>Gerenciamento de pedidos</p>
+  </header>
+
+  <section class="filtros">
+
+    <input
+      type="text"
+      id="buscarUid"
+      placeholder="🔎 Buscar UID"
+    >
+
+    <select id="filtroStatus">
+
+      <option value="todos">
+        Todos
+      </option>
+
+      <option value="aguardando">
+        Aguardando
+      </option>
+
+      <option value="entregue">
+        Entregue
+      </option>
+
+      <option value="cancelado">
+        Cancelado
+      </option>
+
+      <option value="reembolsado">
+        Reembolsado
+      </option>
+
+    </select>
+
+  </section>
+
+  <main id="listaPedidos" class="container">
+
+    <div class="loading">
+      Carregando pedidos...
+    </div>
+
+  </main>
+
+  <script type="module" src="./admin.js"></script>
+
+</body>
+</html>
