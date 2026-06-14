@@ -1,0 +1,466 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #020202;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+
+/* ==========================
+        FUNDO CINEMÁTICO
+========================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -5;
+
+    background:
+        radial-gradient(circle at top,
+        rgba(255,160,0,.18),
+        transparent 35%),
+
+        radial-gradient(circle at left,
+        rgba(0,120,60,.25),
+        transparent 40%),
+
+        radial-gradient(circle at right,
+        rgba(0,90,255,.22),
+        transparent 35%),
+
+        #020202;
+}
+
+
+/* Fumaça */
+
+.smoke {
+    position: fixed;
+    inset: 0;
+    z-index: -4;
+
+    background:
+        radial-gradient(
+        circle,
+        transparent 40%,
+        rgba(0,0,0,.55)
+        );
+}
+
+
+/* ==========================
+          PARTÍCULAS
+========================== */
+
+.particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -3;
+}
+
+
+.particles span {
+    position: absolute;
+    bottom: -30px;
+
+    width: 5px;
+    height: 5px;
+
+    background: #ffb400;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px #ffb400;
+
+    animation:
+        rise 6s linear infinite;
+}
+
+
+.particles span:nth-child(1){
+    left: 12%;
+}
+
+.particles span:nth-child(2){
+    left: 28%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(3){
+    left: 45%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(4){
+    left: 60%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(5){
+    left: 78%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(6){
+    left: 90%;
+    animation-delay: 2.5s;
+}
+
+
+@keyframes rise {
+
+    0% {
+        transform:
+        translateY(0) scale(1);
+
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+
+    100% {
+        transform:
+        translateY(-100vh)
+        scale(0);
+
+        opacity: 0;
+    }
+}
+
+
+/* ==========================
+          CABEÇALHO
+========================== */
+
+header {
+
+    height: 85px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.menu {
+
+    position: absolute;
+
+    left: 20px;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    border: 1px solid
+    rgba(255,180,0,.25);
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter: blur(12px);
+
+    color: #ffb400;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.menu:hover {
+
+    transform: scale(1.1);
+
+    box-shadow:
+    0 0 25px #ffb400;
+}
+
+
+/* ==========================
+            LOGO
+========================== */
+
+.logo {
+
+    text-align: center;
+}
+
+
+.logo h1 {
+
+    font-size: 42px;
+
+    letter-spacing: 8px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 20px #ffb400;
+}
+
+
+.logo p {
+
+    color: #ffb400;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+}
+
+
+/* ==========================
+           HERO
+========================== */
+
+.hero {
+
+    min-height:
+    calc(100vh - 85px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-evenly;
+
+    text-align: center;
+
+    padding: 0 25px;
+}
+
+
+/* Texto */
+
+.slogan {
+
+    color: #ffb400;
+
+    letter-spacing: 3px;
+
+    font-size: 13px;
+}
+
+
+.text h2 {
+
+    margin-top: 12px;
+
+    font-size: 40px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+}
+
+
+.text p {
+
+    margin-top: 15px;
+
+    color: #cccccc;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* ==========================
+          LATA
+========================== */
+
+.product {
+
+    position: relative;
+}
+
+
+/* Aura dourada */
+
+.light {
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+    translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+    radial-gradient(
+    #ffb400,
+    transparent 70%
+    );
+
+    filter: blur(60px);
+
+    opacity: .5;
+
+    animation:
+    pulse 4s infinite;
+}
+
+
+@keyframes pulse {
+
+    50% {
+
+        transform:
+        translate(-50%, -50%)
+        scale(1.25);
+
+        opacity: .75;
+    }
+}
+
+
+/* Imagem da lata */
+
+.product img {
+
+    width: 210px;
+
+    position: relative;
+
+    z-index: 2;
+
+    filter:
+    drop-shadow(0 20px 40px black);
+
+    animation:
+    float 4s ease-in-out infinite;
+}
+
+
+/* Esconde imagem vazia */
+
+.product img[src=""] {
+
+    display: none;
+}
+
+
+@keyframes float {
+
+    50% {
+
+        transform:
+        translateY(-15px);
+    }
+}
+
+
+/* ==========================
+          INFORMAÇÕES
+========================== */
+
+.info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #ffb400;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.dot {
+
+    width: 6px;
+
+    height: 6px;
+
+    background: #ffb400;
+
+    border-radius: 50%;
+}
+
+
+/* SCROLL */
+
+.scroll {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #888;
+
+    animation:
+    blink 1.5s infinite;
+}
+
+
+@keyframes blink {
+
+    50% {
+
+        opacity: .35;
+    }
+}
+
+
+/* ==========================
+       TELAS MENORES
+========================== */
+
+@media (max-width: 390px) {
+
+
+    .logo h1 {
+
+        font-size: 36px;
+    }
+
+
+    .text h2 {
+
+        font-size: 34px;
+    }
+
+
+    .product img {
+
+        width: 190px;
+    }
+
+}
