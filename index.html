@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nota Fácil</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Nota Fácil</h1>
+
+<p>Preencha os dados abaixo para gerar seu comprovante.</p>
+
+<h3>Empresa</h3>
+
+<input id="empresa" placeholder="Nome da empresa">
+
+<h3>Cliente</h3>
+
+<input id="cliente" placeholder="Nome do cliente">
+
+<h3>Produto</h3>
+
+<input id="produto" placeholder="Produto">
+
+<textarea id="descricao" placeholder="Descrição do produto"></textarea>
+
+<div class="linha">
+
+<input id="quantidade" type="number" placeholder="Quantidade">
+
+<input id="valor" type="number" placeholder="Valor Unitário">
+
+</div>
+
+<h3>Frete</h3>
+
+<select id="freteOpcao">
+<option value="nao">Sem Frete</option>
+<option value="sim">Com Frete</option>
+</select>
+
+<input
+id="frete"
+type="number"
+placeholder="Valor do frete"
+style="display:none;">
+
+<button id="gerar">
+Gerar Comprovante
+</button>
+
+</div>
+
+<div id="nota" class="nota">
+
+<div class="cabecalho">
+
+<h2 id="rEmpresa">
+EMPRESA
+</h2>
+
+<p>
+COMPROVANTE DE VENDA
+</p>
+
+</div>
+
+<div class="dados">
+
+<p><strong>Cliente:</strong> <span id="rCliente"></span></p>
+
+<p><strong>Data:</strong> <span id="rData"></span></p>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Produto</th>
+
+<th>Qtd</th>
+
+<th>Unitário</th>
+
+<th>Total</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td id="rProduto"></td>
+
+<td id="rQtd"></td>
+
+<td id="rUnit"></td>
+
+<td id="rValor"></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<div class="descricao">
+
+<strong>Descrição</strong>
+
+<p id="rDescricao"></p>
+
+</div>
+
+<div class="totais">
+
+<p>Frete:
+<span id="rFrete"></span></p>
+
+<h2>Total:
+<span id="rTotal"></span></h2>
+
+</div>
+
+<div class="rodape">
+
+Obrigado pela preferência!
+
+</div>
+
+<button class="imprimir" onclick="window.print()">
+
+🖨️ Imprimir / Salvar PDF
+
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
